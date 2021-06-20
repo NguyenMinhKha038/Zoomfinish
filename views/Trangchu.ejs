@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/css.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+    <script src="/js/jquery/jquery.min.js"></script>
+    <script src="/js/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+    <header class='Header'>
+        <img src="img/hkt.png" class='img-header' alt="" />
+        <div class='div-btn'>
+            <button class='btn-header'>K-12</button>
+            <button class='btn-header'>Higher ED</button>
+            <button class='btn-header'>Corporate</button>
+            <button class='btn-header'>Contact</button>
+            <button class='btn-header'>Plans</button>
+            <button class='btn-header'>Blog</button>
+            <button class='btn-header'>Subport</button>
+        </div>
+        <div class='dangky'>
+            <a href="/singup"><button class='btn-sign-up'>Sign Up Now!</button></a>
+        </div>
+        <div class='div-login'>
+            <button class='btn-Login'  id="btn-show-popup">Login</button>
+    
+    
+    
+        </div>
+    </header>
+    <div class='backgr1' style="background-image: url(/img/home2.jpg);"></div>
+    <div class='backgr2'>
+        <iframe width="871" height="490" src="https://www.youtube.com/embed/AII3a9dTIy4" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        <div class='backgr3'>
+            <h3 class='h6-body'>OVERVIEW</h3>
+            <h1 class='h1-body'>Visualizing Student Understanding has Never Been Easier</h1>
+        </div>
+    </div>
+
+    <!-- PopUp -->
+    <div id="content-popup" >
+        <a href="/student"><button class='btn-student' align="center">Student Login</button></a>
+        <a href="/teacher/loginform"><button class='btn-teacher' align="center">Teacher Login</button></a>
+        <hr class='hr-loginform' width="30%" align="center" />
+        <h3 align="center">Don’t have an account?</h3>
+        <a href="/singup"><h3 align="center">Go back and Sign Up Now !</h3></a>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#btn-show-popup').click(function () { // bắt sự kiện click vào #btn-show-popup
+                $('#content-popup').wrap('<div id="wrap-popup"></div>'); // lệnh wrap, ở đây mình bọc #content-popup bằng 1 div là #wrap-popup  (để làm nền đen)
+                $('#content-popup').css('display', 'inline-block'); // hiển thị div chứa nội dung popup lên
+
+                $('#wrap-popup').click(function () { // bắt sự kiện khi click bên ngoài popup
+                    $('#content-popup').css('display', 'none'); // ẩn div chứa nội dung popup đi
+                    $('#content-popup').unwrap(); // xóa div bọc vừa tạo lúc nãy
+                });
+            });
+        });
+    </script>
+</body>
+</html>

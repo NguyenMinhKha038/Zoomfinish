@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>New Post</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+    <!-- Custom styles for this template -->
+    <link href="/css/pgTeacher.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="container-fluid p-0">
+        <div class="row" id="body-row">
+            <!-- Sidebar -->
+            <div id="sidebar-container" class="sidebar-expanded d-none d-md-block"><!-- d-* hiddens the Sidebar in smaller devices. Its itens can be kept on the Navbar 'Menu' -->
+                <!-- Bootstrap List Group -->
+                <ul class="list-group">
+                    <!-- Separator with title -->
+                    <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+                        <small>MAIN MENU</small>
+                    </li>
+                    <!-- /END Separator -->
+                    <!-- Menu with submenu -->
+                <% if(TeacherloggedIn) { %>
+                    <a href="/viewclass" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="fa fa-dashboard fa-fw mr-3"></span> 
+                            <span class="menu-collapsed">QUẢN LÍ LỚP</span>
+                            <span class="submenu-icon ml-auto"></span>
+                        </div>
+                    </a>
+                    <% } %>
+                    <% if(TeacherloggedIn == null) { %>
+                    <a href="/viewclass" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="fa fa-dashboard fa-fw mr-3"></span> 
+                            <span class="menu-collapsed">LỚP</span>
+                            <span class="submenu-icon ml-auto"></span>
+                        </div>
+                    </a>
+                    <% } %>
+                    <!-- Submenu content -->
+                    <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="fa fa-user fa-fw mr-3"></span>
+                            <span class="menu-collapsed">THÔNG TIN</span>
+                            <span class="submenu-icon ml-auto"></span>
+                        </div>
+                    </a>
+                    <!-- Submenu content -->
+                    <div id='submenu2' class="collapse sidebar-submenu">
+                        <a href="/profile" class="list-group-item list-group-item-action bg-dark text-white">
+                            <span class="menu-collapsed">THÔNG TIN</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+                            <span class="menu-collapsed">MẬT KHẨU</span>
+                        </a>
+                    </div>
+                    <!-- Separator with title -->
+                    <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+                        <small>OPTIONS</small>
+                    </li>
+                    <!-- /END Separator -->
+                    <a href="#" class="bg-dark list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="fa fa-calendar fa-fw mr-3"></span>
+                            <span class="menu-collapsed">Calendar</span>
+                        </div>
+                    </a>
+                    <a href="https://mail.google.com/" class="bg-dark list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="fa fa-envelope-o fa-fw mr-3"></span>
+                            <span class="menu-collapsed">Email<span class="badge badge-pill badge-primary ml-2">5</span></span>
+                        </div>
+                    </a>
+                    <!-- Separator without title -->
+                    <li class="list-group-item sidebar-separator menu-collapsed"></li>            
+                    <!-- /END Separator -->
+                    <a href="#" class="bg-dark list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="fa fa-question fa-fw mr-3"></span>
+                            <span class="menu-collapsed">Help</span>
+                        </div>
+                    </a>
+                    <a href="#" data-toggle="sidebar-colapse" class="bg-dark list-group-item list-group-item-action d-flex align-items-center">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span id="collapse-icon" class="fa fa-2x mr-3"></span>
+                            <span id="collapse-text" class="menu-collapsed">Collapse</span>
+                        </div>
+                    </a>
+                    <a href="/logout" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa fa-sign-out fa-fw mr-3"></span>
+                        <span class="menu-collapsed">THOÁT</span>
+                    </div>
+                </a>
+                </ul><!-- List Group END-->
+            </div><!-- sidebar-container END -->
+            <div class="col">
+                <div class="row justify-content-end bg-dark">
+                    <ul class="nav">
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/pgTeacher"><span class="fa fa-user fa-fw mr-3"></span>Active</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row justify-content-end">
+                    <div class="pos-f-t">
+                        <div class="collapse" id="navbarToggleExternalContent">
+                          <div class="bg-light p-4">
+                            <article>
+                                <% if(TeacherloggedIn) { %>
+                                    <div class="container-fluid">
+                                    <a href="/create/room"><button class="btn-primary mx-auto"  style="width:300px;">Tạo phòng chat</button></a></br>
+                                    <a href="/create/post"><button class="btn-primary mx-auto"  style="width:300px;">Tạo bài đăng</button></a></br>
+                                    <a href="/create/student"><button class="btn-primary mx-auto"  style="width:300px;">Tạo sinh viên</button></a></br>
+                                    <!-- <a href="/viewpost"><button>Các bài đăng</button></a> -->
+                                    <a href="/homework"><button class="btn-primary mx-auto"  style="width:300px;">Bài tập</button></a></br>
+                                    <a href="/viewstudent"><button class="btn-primary mx-auto"  style="width:300px;">Các Sinh Viên Trong Lớp</button></a>
+                                    </div>
+                                <% } %>
+                                <% if(TeacherloggedIn==null) { %>
+                                <a href="/xemdiem"><button>Xem điểm</button></a> </br>
+                                <a href="/nopbaitap"><button>Nộp bài tập</button></a>
+
+                                <% } %>
+                            </article>
+                          </div>
+                        </div>
+                        <nav class="navbar navbar-dark bg-dark">
+                          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                        </nav>
+                      </div>
+                </div>
+                <div class="row justify-content-center">
+                    
+                    <!-- Post Content -->
+                    <article>
+
+                        <div class="card text-center" style="width:1200px">
+                            <% for (var i=0; i < blogposts.length; i++) { %>
+                            <div class="card-header alert alert-warning">
+                              THÔNG BÁO <span class="fa fa-bell" aria-hidden="true"></span>
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title"><%= blogposts[i].title %></h5>
+                              <p class="card-text"><%= blogposts[i].body %>.</p>
+                              <a href="/viewpost/<%= blogposts[i]._id %>" class="btn btn-primary">CHI TIẾT</a>
+                            </div>
+                            <div class="card-footer text-muted">
+                                <p class="post-meta"><%= blogposts[i]._id.getTimestamp() %>
+                                </p>
+                            </div>
+                            <% } %>
+                        </div>
+                    </article>
+                </div>
+            </div><!-- Main Col END -->
+        </div>
+    </div>
+
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="/js/jquery/jquery.min.js"></script>
+        <script src="/js/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Menu Toggle Script -->
+        
+
+  <!-- Menu Toggle Script -->
+  <script>
+    // Hide submenus
+$('#body-row .collapse').collapse('hide'); 
+
+// Collapse/Expand icon
+$('#collapse-icon').addClass('fa-angle-double-left'); 
+
+// Collapse click
+$('[data-toggle=sidebar-colapse]').click(function() {
+    SidebarCollapse();
+});
+
+function SidebarCollapse () {
+    $('.menu-collapsed').toggleClass('d-none');
+    $('.sidebar-submenu').toggleClass('d-none');
+    $('.submenu-icon').toggleClass('d-none');
+    $('#sidebar-container').toggleClass('sidebar-expanded sidebar-collapsed');
+    
+    // Treating d-flex/d-none on separators with title
+    var SeparatorTitle = $('.sidebar-separator-title');
+    if ( SeparatorTitle.hasClass('d-flex') ) {
+        SeparatorTitle.removeClass('d-flex');
+    } else {
+        SeparatorTitle.addClass('d-flex');
+    }
+    
+    // Collapse/Expand icon
+    $('#collapse-icon').toggleClass('fa-angle-double-left fa-angle-double-right');
+}
+function openNav() {
+  document.getElementById("mySidenav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+  </script>
+
+</body>
+
+</html>

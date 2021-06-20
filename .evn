@@ -1,0 +1,3 @@
+DATABASE_URL=mongodb+srv://Tieuholy381998:Tieuholy381998@cluster0.s3fyo.mongodb.net/<dbname>?retryWrites=true&w=majority
+JWT_KEY=HuongVNQ
+PORT=3000

@@ -1,0 +1,183 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.img-header {
+  width: 15%;
+  height: 50px;
+  float: left;
+  padding: 10px;
+}
+.btn-header {
+  margin: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+}
+.Header {
+  height: 70px;
+  width: 100%;
+  border-bottom: 1px outset black;
+}
+.btn-header:hover {
+  color: rgb(6, 183, 216);
+}
+.btn-sign-up {
+  border: 1px solid black;
+  background-color: #ffffff;
+  margin: 10px;
+  font-size: 20px;
+  border-radius: 5px 5px 5px 5px;
+  width: 150px;
+  height: 40px;
+}
+.div-btn {
+  float: left;
+  margin-left: 30px;
+}
+.btn-Login {
+  border: 1px solid black;
+  background-color: #ffffff;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px 5px 5px 5px;
+  width: 150px;
+  height: 40px;
+  margin-top: 10px;
+  background-color: rgb(6, 183, 216);
+  color: white;
+}
+.btn-Login:hover {
+  background-color: rgb(13, 32, 79);
+}
+.div-login {
+  float: left;
+  margin-right: 0px;
+}
+.btn-sign-up:hover {
+  background-color: rgb(13, 32, 79);
+  color: white;
+}
+.dangky {
+  float: left;
+  margin-right: 10px;
+}
+.backgr1 {
+  height: 705px;
+  width: 1440px;
+  background-position: 60% 20%;
+}
+.backgr2 {
+  display: flex;
+}
+.backgr3 {
+  background-color: #fff6e1;
+  width: 70%;
+}
+.video {
+  height: 440px;
+  width: 720px;
+  float: left;
+}
+.h6-body {
+  margin-right: 67%;
+  margin-top: 10%;
+}
+.h1-body {
+  margin-left: 10%;
+  margin-right: 40%;
+  margin-top: 10%;
+  text-align: left;
+  color: #ff620b;
+}
+.login-form {
+  width: 520px;
+  height: 400px;
+  background-color: white;
+}
+.btn-student {
+  width: 380px;
+  height: 50px;
+  border: 1px solid #06b7d8;
+  background-color: white;
+  color: #06b7d8;
+  margin-top: 80px;
+  margin-left: 6%;
+}
+.btn-teacher {
+  width: 380px;
+  height: 50px;
+  border: 1px solid #ff620b;
+  background-color: white;
+  color: #ff620b;
+  margin-top: 30px;
+  margin-left: 6%;
+}
+.div-formlogin {
+  z-index: 100000;
+}
+.hr-loginform {
+  margin-top: 8%;
+}
+
+#content-popup {
+  width: 530px;
+  height: 410px;
+  display: none; /*Mặc định div chứa nội dung popup sẽ được ẩn đi*/
+  padding: 20px 40px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background: #fff;
+  margin-top: 200px;
+  position: relative;
+}
+#wrap-popup {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  text-align: center;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/*----*/
